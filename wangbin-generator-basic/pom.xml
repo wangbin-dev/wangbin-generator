@@ -15,6 +15,12 @@
     </properties>
 
     <dependencies>
+        <!-- https://freemarker.apache.org/index.html -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.32</version>
+        </dependency>
         <!-- https://doc.hutool.cn/ -->
         <dependency>
             <groupId>cn.hutool</groupId>
@@ -38,7 +44,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
