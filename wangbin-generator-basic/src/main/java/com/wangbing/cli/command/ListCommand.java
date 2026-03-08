@@ -12,8 +12,10 @@ public class ListCommand implements Runnable {
         // 整个项目的根路径
         String projectPath = System.getProperty("user.dir");
 
+        File parentFile = new File(projectPath).getParentFile();
+
         // 输入路径
-        String inputPath = new File(projectPath, "wangbin-generator-demo-projects/acm-template").getAbsolutePath();
+        String inputPath = new File(parentFile, "wangbin-generator-demo-projects/acm-template").getAbsolutePath();
 
         // Hutool 工具类遍历该目录下的所有文件
         List<File> files = FileUtil.loopFiles(inputPath);
