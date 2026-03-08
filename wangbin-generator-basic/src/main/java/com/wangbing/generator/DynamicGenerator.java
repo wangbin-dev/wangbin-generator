@@ -12,15 +12,20 @@ public class DynamicGenerator {
 
     public static void main(String[] args) throws IOException, TemplateException {
         // 路径拼接
-        String projectPath = System.getProperty("user.dir") + File.separator + "wangbin-generator-basic";
-        String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "MainTemplate.java";
+        // 获取项目根路径
+        String projectPath = System.getProperty("user.dir");
+        // 获取整个项目根路径
+        File parentFile = new File(projectPath).getParentFile();
+        // 输入路径
+        String inputPath = new File(projectPath, "src/main/resources/templates/MainTemplate.java.ftl").getAbsolutePath();
+        // 输出路径
+        String outputPath = new File(parentFile, "acm-template/src/com/wangbing/acm/MainTemplate.java").getAbsolutePath();
 
         // 创建模板数据
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("wangbing-dev");
         mainTemplateConfig.setLoop(false);
-        mainTemplateConfig.setOutputText("求和结果：");
+        mainTemplateConfig.setOutputText("求和结果1：");
 
         // 生成文件
         doGenerate(inputPath, outputPath, mainTemplateConfig);

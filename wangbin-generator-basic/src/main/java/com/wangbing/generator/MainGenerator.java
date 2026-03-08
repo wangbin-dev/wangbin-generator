@@ -15,8 +15,8 @@ public class MainGenerator {
     public static void main(String[] args) throws TemplateException, IOException {
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("wangbing-dev");
-        mainTemplateConfig.setLoop(false);
-        mainTemplateConfig.setOutputText("求和结果：");
+        mainTemplateConfig.setLoop(true);
+        mainTemplateConfig.setOutputText("求和sum=：");
         doGenerate(mainTemplateConfig);
     }
 
@@ -28,20 +28,22 @@ public class MainGenerator {
      */
     public static void doGenerate(Object model) throws TemplateException, IOException {
         // 1.静态文件生成
-        // 获取主项目路径
+        // 获取项目根路径
         String projectPath = System.getProperty("user.dir");
+        // 获取整个项目根路径
+        File parentFile = new File(projectPath).getParentFile();
         // 输入路径
-        String inputPath = projectPath + File.separator + "wangbin-generator-demo-projects" + File.separator + "acm-template";
+        String inputPath = new File(parentFile, "wangbin-generator-demo-projects/acm-template").getAbsolutePath();
         // 输出路径
-        String outputPath = projectPath;
+        String outputPath = parentFile.getAbsolutePath();
         // 生成静态文件
         StaticGenerator.copyFilesByHutool(inputPath, outputPath);
 
         // 2.动态文件生成
         // 输入路径
-        String inputDynamicFilePath = projectPath + File.separator + "wangbin-generator-basic" + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
+        String inputDynamicFilePath = new File(projectPath, "src/main/resources/templates/MainTemplate.java.ftl").getAbsolutePath();
         // 输出路径
-        String outputDynamicFilePath = projectPath + File.separator + "acm-template/src/com/wangbing/acm/MainTemplate.java";
+        String outputDynamicFilePath = new File(parentFile, "acm-template/src/com/wangbing/acm/MainTemplate.java").getAbsolutePath();
         // 生成动态文件
         DynamicGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
     }

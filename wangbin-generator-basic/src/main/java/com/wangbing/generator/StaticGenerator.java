@@ -6,12 +6,14 @@ import java.io.File;
 public class StaticGenerator {
 
     public static void main(String[] args) {
-        // 获取主项目路径
+        // 获取项目根路径
         String projectPath = System.getProperty("user.dir");
+        // 获取整个项目根路径
+        File parentFile = new File(projectPath).getParentFile();
         // 输入路径
-        String inputPath = projectPath + File.separator + "wangbin-generator-demo-projects" + File.separator + "acm-template";
+        String inputPath = new File(parentFile, "wangbin-generator-demo-projects/acm-template").getAbsolutePath();
         // 输出路径
-        String outputPath = projectPath;
+        String outputPath = parentFile.getAbsolutePath();
         // 复制
         copyFilesByHutool(inputPath, outputPath);
     }
