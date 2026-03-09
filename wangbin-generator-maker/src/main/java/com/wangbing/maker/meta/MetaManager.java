@@ -63,8 +63,6 @@ public class MetaManager {
         // JSON反序列化为Meta对象（依赖Hutool的JSON工具，底层基于反射）
         // 风险点：若JSON字段与Meta类不匹配，会抛出反序列化异常
         Meta newMeta = JSONUtil.toBean(metaJson, Meta.class);
-        // todo 校验和处理默认值
-        // 面试考察：此处应补充必填字段校验（如newMeta.getXXX() != null）、默认值填充逻辑
         return newMeta;
     }
 }
