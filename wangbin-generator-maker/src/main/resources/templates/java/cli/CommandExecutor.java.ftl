@@ -1,12 +1,15 @@
-package com.wangbing.maker.cli;
+package ${basePackage}.cli;
 
-import com.wangbing.maker.cli.command.ConfigCommand;
-import com.wangbing.maker.cli.command.GenerateCommand;
-import com.wangbing.maker.cli.command.ListCommand;
+import ${basePackage}.cli.command.GenerateCommand;
+import ${basePackage}.cli.command.ListCommand;
+import ${basePackage}.cli.command.ConfigCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
-@Command(name = "wangbing", mixinStandardHelpOptions = true)
+/**
+ * 命令执行器
+ */
+@Command(name = "${name}", mixinStandardHelpOptions = true)
 public class CommandExecutor implements Runnable {
 
     private final CommandLine commandLine;
@@ -34,3 +37,4 @@ public class CommandExecutor implements Runnable {
         return commandLine.execute(args);
     }
 }
+
