@@ -13,6 +13,7 @@ public class ConfigCommand implements Runnable {
         // 实现 config 命令的逻辑
         System.out.println("查看参数信息");
 
+        // Hutool 的反射工具类，能拿到所有字段全部信息
         Field[] fields = ReflectUtil.getFields(DataModel.class);
 
         // 遍历并打印每个字段的信息

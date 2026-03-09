@@ -1,4 +1,4 @@
-package src.com.wangbing.acm;
+package com.wangbing.acm;
 
 import java.util.Scanner;
 

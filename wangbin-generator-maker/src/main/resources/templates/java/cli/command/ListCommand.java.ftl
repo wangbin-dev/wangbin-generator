@@ -12,6 +12,8 @@ public class ListCommand implements Runnable {
     public void run() {
         // 输入路径
         String inputPath = "${fileConfig.inputRootPath}";
+
+        // Hutool 工具类遍历该目录下的所有文件
         List<File> files = FileUtil.loopFiles(inputPath);
         for (File file : files) {
             System.out.println(file);

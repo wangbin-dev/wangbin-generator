@@ -6,13 +6,13 @@
   "author": "wangbin-dev",
   "createTime": "2026-03-09",
   "fileConfig": {
-    "inputRootPath": "/wangbin-generator/wangbin-generator-demo-projects/acm-template-pro",
-    "outputRootPath": "generated",
+    "inputRootPath": "D:/wangbin-generator/wangbin-generator-demo-projects/acm-template",
+    "outputRootPath": "D:/wangbin-generator/acm-template",
     "type": "dir",
     "files": [
       {
-        "inputPath": "src/com/yupi/wangbing/MainTemplate.java.ftl",
-        "outputPath": "src/com/yupi/wangbing/MainTemplate.java",
+        "inputPath": "src/com/wangbing/acm/MainTemplate.java.ftl",
+        "outputPath": "src/com/wangbing/acm/MainTemplate.java",
         "type": "file",
         "generateType": "dynamic"
       },

@@ -23,8 +23,8 @@ public class MainGenerator {
     /**
      * 代码封装
      * @param model 数据模型
-     * @throws TemplateException
-     * @throws IOException
+     * @throws TemplateException Template异常
+     * @throws IOException IO异常
      */
     public static void doGenerate(Object model) throws TemplateException, IOException {
         // 1.静态文件生成
