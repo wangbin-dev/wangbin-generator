@@ -1,6 +1,5 @@
 package com.wangbing.maker.cli;
 
-import com.wangbing.cli.command.*;
 import com.wangbing.maker.cli.command.ConfigCommand;
 import com.wangbing.maker.cli.command.GenerateCommand;
 import com.wangbing.maker.cli.command.ListCommand;
