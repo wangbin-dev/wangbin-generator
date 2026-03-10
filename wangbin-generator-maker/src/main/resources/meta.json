@@ -6,8 +6,9 @@
   "author": "wangbin-dev",
   "createTime": "2026-03-09",
   "fileConfig": {
-    "inputRootPath": "D:/wangbin-generator/wangbin-generator-demo-projects/acm-template",
-    "outputRootPath": "D:/wangbin-generator/acm-template",
+    "inputRootPath": ".source/acm-template",
+    "outputRootPath": "generated",
+    "sourceRootPath": "D:/wangbin-generator/wangbin-generator-demo-projects/acm-template",
     "type": "dir",
     "files": [
       {
