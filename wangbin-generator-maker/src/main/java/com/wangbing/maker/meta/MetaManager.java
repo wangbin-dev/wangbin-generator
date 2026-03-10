@@ -58,11 +58,12 @@ public class MetaManager {
      */
     private static Meta initMeta() {
         // 读取classpath下的meta.json配置文件（Hutool工具类简化IO操作）
-        // 风险点：若文件不存在，会抛出IO异常，此处未捕获
         String metaJson = ResourceUtil.readUtf8Str("meta.json");
         // JSON反序列化为Meta对象（依赖Hutool的JSON工具，底层基于反射）
-        // 风险点：若JSON字段与Meta类不匹配，会抛出反序列化异常
         Meta newMeta = JSONUtil.toBean(metaJson, Meta.class);
+        // 校验和处理默认值
+        MetaValidator.doValidAndFill(newMeta);
         return newMeta;
     }
+
 }
