@@ -4,6 +4,7 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.StrUtil;
 import com.wangbing.maker.generator.JarGenerator;
+import com.wangbing.maker.generator.ScriptGenerator;
 import com.wangbing.maker.generator.file.DynamicFileGenerator;
 import com.wangbing.maker.meta.Meta;
 import com.wangbing.maker.meta.MetaManager;
@@ -86,9 +87,15 @@ public class MainGenerator {
         inputFilePath = inputResourcePath + File.separator + "templates/pom.xml.ftl";
         outputFilePath = outputPath + File.separator + "pom.xml";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
-
         // 构建 jar 包
         JarGenerator.doGenerate(outputPath);
+
+        // 封装脚本
+        String shellOutputFilePath = outputPath + File.separator + "generator";
+        String jarName = String.format("%s-%s-jar-with-dependencies.jar", meta.getName(), meta.getVersion());
+        String jarPath = "target/" + jarName;
+        ScriptGenerator.doGenerate(shellOutputFilePath, jarPath);
+
     }
 
 }
