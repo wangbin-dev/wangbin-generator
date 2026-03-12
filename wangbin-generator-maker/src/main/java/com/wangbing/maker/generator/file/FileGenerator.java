@@ -41,11 +41,11 @@ public class FileGenerator {
     }
 
     public static void main(String[] args) throws TemplateException, IOException {
-        DataModel dataModel = new DataModel();
-        dataModel.setAuthor("wangbing-dev");
-        dataModel.setLoop(true);
-        dataModel.setOutputText("求和sum=：");
-        doGenerate(dataModel);
+//        DataModel dataModel = new DataModel();
+//        dataModel.setAuthor("wangbing-dev");
+//        dataModel.setLoop(true);
+//        dataModel.setOutputText("求和sum=：");
+//        doGenerate(dataModel);
     }
 
 }
