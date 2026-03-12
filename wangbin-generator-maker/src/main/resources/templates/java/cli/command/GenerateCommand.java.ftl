@@ -21,7 +21,7 @@ public class GenerateCommand implements Callable<Integer> {
     public Integer call() throws Exception {
         DataModel dataModel = new DataModel();
 
-        // 命令行需要输入的参数如上【loop、author、outputText】
+        // 命令行需要输入的参数如上【needGit、loop、author、outputText】
         // Hutool 将命令接收到的属性复制给MainTemplateConfig
         BeanUtil.copyProperties(this, dataModel);
 

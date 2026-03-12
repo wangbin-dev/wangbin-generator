@@ -27,7 +27,7 @@ public class Meta {
         private String sourceRootPath;
         private String type;
         private List<FileInfo> files;
-        
+
         @NoArgsConstructor
         @Data
         public static class FileInfo {
@@ -36,6 +36,9 @@ public class Meta {
             private String type;
             private String generateType;
             private String condition;
+            private String groupKey;
+            private String groupName;
+            private List<FileInfo> files;
         }
     }
 
